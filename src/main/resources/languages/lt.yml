@@ -1,0 +1,366 @@
+player-only: '&4[&cItemEdit&4] &cKomanda tik žaidėjams'
+no-item-on-hand: '&4[&cItemEdit&4] &cReikia laikyti daiktą rankoje'
+lack-permission: '&4[&cItemEdit&4] &cNeturite leidimo %permission%'
+lack-permission-generic: '&4[&cItemEdit&4] &cNeturite leidimo naudoti šią komandą'
+blocked-by-censure: '&4[&cItemEdit&4] &cNegalite naudoti šio teksto, jis turi užblokuotų
+  žodžių'
+blocked-by-type-restriction: '&4[&cItemEdit&4] &cNegalite pervadinti šio daikto'
+blocked-by-type-restriction-lore: '&4[&cItemEdit&4] &cNegalite redaguoti šio daikto
+  aprašymo'
+itemedit:
+  help-header: '&9&lItemEdit - Pagalba'
+  rename:
+    description:
+    - '&b&lNustatyti daikto pavadinimą'
+    - ''
+    - '&b&lPatarimas: &bįveskite &eclear &b, kad grąžintumėte pavadinimą į numatytąjį'
+    params: <name>
+  lore:
+    description:
+    - '&b&lRedaguoti aprašymą'
+    - ''
+    - '&ePridėti <text> &b- pridėti tekstą naujoje eilutėje'
+    - '&eĮterpti <line> <text> &b- įterpti tekstą pasirinktoje eilutėje'
+    - '&eNustatyti <line> <text> &b- nustatyti arba pakeisti tekstą pasirinktoje eilutėje'
+    - '&ePašalinti <line> &b- pašalinti pasirinktą eilutę'
+    - '&eAtstatyti &b- pašalinti visas eilutes'
+    - '&eKopijuoti &b- kopijuoti dabartinį daikto aprašymą, kad galėtumėte jį įklijuoti vėliau'
+    - '&eKopijuotiKnygą &b- tas pats kaip kopijuoti, bet iš knygos puslapių kaip eilutes'
+    - '&eKopijuotiFailą <path> &b- tas pats kaip kopijuoti, bet iš loreCopy.yml'
+    - '&eĮklijuoti &b- įklijuoti paskutinį nukopijuotą aprašymą'
+    - '&ePakeisti <replaced> <replacer> &b- pakeisti visus atvejus'
+    params: <add/set/remove...> [...]
+    set:
+      params: set <line> <text>
+      description:
+      - '&b&lNustatyti arba pakeisti tekstą pasirinktoje eilutėje'
+    remove:
+      params: remove <line>
+      description:
+      - '&b&lPašalinti pasirinktą eilutę'
+    insert:
+      params: insert <line> <text>
+      description:
+      - '&b&lĮterpti tekstą pasirinktoje eilutėje'
+    copy:
+      feedback: '&9[&fItemEdit&9] &aAprašymas nukopijuotas'
+    copyBook:
+      wrong-type: '&4[&cItemEdit&4] &cDaiktas turi būti parašyta knyga arba knyga ir plunksna'
+      feedback: '&9[&fItemEdit&9] &aKnygos puslapiai nukopijuoti'
+    copyFile:
+      no-path: '&4[&cItemEdit&4] &cPasirinkite kelią /ie lore copyfile &6<path>'
+      wrong-path: '&9[&fItemEdit&9] &cNeteisingas kelias, prisiminkite perkrauti konfigūraciją
+        ir patikrinti didžiąsias raides'
+      feedback: '&9[&fItemEdit&9] &aKonfigūracija nukopijuota'
+    paste:
+      feedback: '&9[&fItemEdit&9] &aAprašymas įklijuotas'
+      no-copy: '&4[&cItemEdit&4] &cPirmiausia nukopijuokite aprašymą'
+    replace:
+      params: replace <replaced> <replacer>
+      description:
+      - '&b&lPakeisti visus atvejus aprašyme'
+      - ''
+      - '&bJei reikia pakeisti daugiau nei vieną žodį,'
+      - '&b uždarykite juos į &e{ }'
+      - ''
+      - '&bPavyzdys: &e/ie lore replace New Rusty'
+      - '&b''&eNew sword&b'' -> ''&eRusty sword&b'''
+      - ''
+      - '&bPavyzdys 2: &e/ie lore replace {Heavy} {Very light}'
+      - '&b''&eHeavy sword&b'' -> ''&eVery light sword&b'''
+  hide:
+    wrong-flag: '&4[&cItemEdit&4] &cNeteisinga vėliavos reikšmė! &4[&6hover here&4]'
+    description:
+    - '&b&lPaslėpti arba rodyti komponentus'
+    - ''
+    - '&e<flag> &bdaikto vėliava redaguoti'
+    - '&e[true/false] &bnustatyti vėliavos reikšmę, pagal numatytuosius nustatymus perjungti'
+    - ''
+    - '&b&lPatarimas: &bpaslėpti vėliavos modelius su potion_effects vėliava'
+    - '&b&lPatarimas: &bpaslėpti visas vėliavas vienu metu su &e/itemedit hideall'
+    params: <flag> [true/false]
+  hideall:
+    description:
+    - '&b&lPaslėpti visus komponentus'
+    - ''
+    - '&bPaslepia: užkeikimus, potion efektus, vėliavos sluoksnius, atributus ...'
+    - ''
+    - '&b&lPatarimas: &bpaslėpti atskirus komponentus su &e/itemedit hide <flag> true'
+    params: ''
+  damage:
+    description:
+    - '&b&lRedaguoti patvarumą'
+    - ''
+    - '&e<durability> &bžala, kurią reikia pritaikyti'
+    - '&b&lPastaba: &e0 &breiškia be žalos, pilnas patvarumas'
+    params: <durability>
+  type:
+    description:
+    - '&b&lNustatyti daikto tipą'
+    - ''
+    - '&b&lPastaba: &bkeli tipai, tokie kaip Air, neveiks'
+    params: <type>
+  unbreakable:
+    description:
+    - '&b&lNustatyti nesulaužomą būseną'
+    - ''
+    - '&bNesulaužomi įrankiai ir šarvai nepraranda patvarumo'
+    - '&e[true/false] &bnustatyti nesulaužomą reikšmę, pagal numatytuosius nustatymus perjungti'
+    params: '[true/false]'
+  amount:
+    description:
+    - '&b&lNustatyti kiekį'
+    - ''
+    - '&e<amount> &bkiekis, kurį reikia nustatyti (iki 127)'
+    - '&b&lPatarimas: &bNeigiami kiekiai atimami'
+    - '&b iš dabartinio daikto kiekio'
+    params: <amount>
+  skullowner:
+    wrong-type: '&4[&cItemEdit&4] &cDaiktas turi būti žaidėjo kaukolė'
+    description:
+    - '&b&lNustatyti kaukolės savininką'
+    - ''
+    - '&bVeikia tik su žaidėjo kaukolėmis'
+    - '&e<name> &bsavininko vardas'
+    - ''
+    - '&b&lPatarimas: &bPadėkite ir sulaužykite kaukolę, kad atnaujintumėte odą'
+    params: <name>
+  color:
+    wrong-type: '&4[&cItemEdit&4] &cDaiktas turi būti spalvinamas tipas, pvz., odiniai šarvai,
+      fejerverkų žvaigždės, potionai arba užnuodytos strėlės'
+    description:
+    - '&b&lNustatyti spalvą'
+    - ''
+    - '&bVeikia su odiniais šarvais ir fejerverkų žvaigždėmis, serveriuose'
+    - '&b 1.11+ veikia su bet kokiais potionais ir užnuodytomis strėlėmis!'
+    - '&e<red> <green> <blue> &byra kiekvienos spalvos kiekis, kurį reikia sujungti'
+    - '&bKiekviena spalva yra int reikšmė nuo 0 iki 255'
+    - '&bJei nesuprantate, ieškokite „&eRGB color picker&b“'
+    params: <red> <green> <blue>
+  enchant:
+    wrong-enchant: '&4[&cItemEdit&4] &cNeteisinga užkeikimo reikšmė! &4[&6hover here&4]'
+    description:
+    - '&b&lNustatyti užkeikimus'
+    - ''
+    - '&e<enchant> &bužkeikimo tipas'
+    - '&e[level] &bužkeikimo lygis, pagal numatytuosius nustatymus &e1'
+    - ''
+    - '&b&lPatarimas: &bNustatykite &e[level] &bį &e0 &b, kad pašalintumėte užkeikimą'
+    params: <enchant> [level]
+  booktype:
+    wrong-type: '&4[&cItemEdit&4] &cDaiktas turi būti parašyta knyga'
+    wrong-generation: '&4[&cItemEdit&4] &cNeteisinga knygos tipo reikšmė! &4[&6hover here&4]'
+    description:
+    - '&b&lNustatyti knygos tipą'
+    - ''
+    - '&bVeikia tik su parašytomis knygomis'
+    params: <booktype>
+  bookauthor:
+    wrong-type: '&4[&cItemEdit&4] &cDaiktas turi būti parašyta knyga'
+    description:
+    - '&b&lNustatyti autorių'
+    - ''
+    - '&bAutoriaus vardas gali turėti tarpų ir būti spalvotas'
+    - '&bVeikia tik su parašytomis knygomis'
+    params: <name>
+  potioneffect:
+    wrong-type: '&4[&cItemEdit&4] &cDaiktas turi būti potionas arba užnuodyta strėlė arba įtartina
+      sriuba'
+    wrong-effect: '&4[&cItemEdit&4] &cNeteisinga efekto reikšmė! &4[&6hover here&4]'
+    itemtag-tip: '&9[&fItemEdit&9] &bReikia pridėti potion efektus prie įprastų daiktų?
+      pabandykite >ItemTag<'
+    itemtag-tip-hover:
+    - '&6Spustelėkite mane'
+    description:
+    - '&b&lRedaguoti potiono efektus'
+    - ''
+    - '&bVeikia su bet kokiais potionais, užnuodytomis strėlėmis ir įtartina sriuba!'
+    - '&ePridėti <effect> <duration> [level] &b- pridėti efektą'
+    - '&ePašalinti <effect> &b- pašalinti pasirinktą efektą'
+    - '&eAtstatyti &b- pašalinti visus efektus'
+    params: <add/remove/reset> [...]
+    add:
+      params: add <effect> <duration> [level]
+      description:
+      - '&b&lPridėti/Pakeisti pasirinktą efektą'
+      - ''
+      - '&e<effect> &befekto tipas'
+      - '&e<duration> &btrukmė sekundėmis, &e0 &bskirta momentiniams efektams'
+      - '&e[level] &bIki 127, pagal numatytuosius nustatymus &e1'
+    remove:
+      params: remove <effect>
+      description:
+      - '&b&lPašalinti pasirinktą efektą'
+  banner:
+    wrong-type: '&4[&cItemEdit&4] &cDaiktas turi būti vėliava'
+    wrong-color: '&4[&cItemEdit&4] &cNeteisinga spalvos reikšmė! &4[&6hover here&4]'
+    wrong-pattern: '&4[&cItemEdit&4] &cNeteisinga modelio reikšmė! &4[&6hover here&4]'
+    description:
+    - '&b&lRedaguoti vėliavą'
+    set:
+      params: set <type> <color> <line>
+      description:
+      - '&b&lPakeisti modelį pasirinktoje eilutėje'
+    add:
+      params: add <type> <color>
+      description:
+      - '&b&lPridėti modelį'
+    remove:
+      params: remove <line>
+      description:
+      - '&b&lPašalinti modelį pasirinktoje eilutėje'
+    color:
+      params: color <line> <color>
+      description:
+      - '&b&lPakeisti modelio spalvą pasirinktoje eilutėje'
+    colorbanner:
+      params: colorbanner <color>
+      description:
+      - '&b&lPakeisti vėliavos fono spalvą'
+    params: ''
+  fireworkpower:
+    wrong-type: '&4[&cItemEdit&4] &cDaiktas turi būti fejerverkas'
+    description:
+    - '&b&lNustatyti fejerverko galią'
+    - ''
+    - '&e<power> &bgalia fejerverko, reikšmė tarp &e0 &bir &e5'
+    params: <power>
+  firework:
+    wrong-type: '&4[&cItemEdit&4] &cDaiktas turi būti fejerverkas'
+    description:
+    - '&b&lRedaguoti fejerverką'
+    params: ''
+  spawnereggtype:
+    wrong-type: '&4[&cItemEdit&4] &cDaiktas turi būti spawnerio kiaušinis'
+    wrong-entity: '&4[&cItemEdit&4] &cNeteisinga kiaušinio tipo reikšmė! &4[&6hover here&4]'
+    description:
+    - '&b&lNustatyti spawnerio kiaušinio iššaukiamą būtybę'
+    - ''
+    - '&e<type> &bbūtybės tipas'
+    - '&bTik kai kurie būtybių tipai gali būti iššaukiami kiaušiniais'
+    params: <type>
+  attribute:
+    wrong-attribute: '&4[&cItemEdit&4] &cNeteisinga atributo reikšmė! &4[&6hover here&4]'
+    wrong-operation: '&4[&cItemEdit&4] &cNeteisinga operacijos reikšmė! &4[&6hover here&4]'
+    wrong-equipment: '&4[&cItemEdit&4] &cNeteisinga įrangos reikšmė! &4[&6hover here&4]'
+    description:
+    - '&b&lRedaguoti atributo modifikatorius'
+    - ''
+    - '&ePridėti <attribute> <amount> [operation] [slot] &b- pridėti naujus modifikatorius'
+    - '&ePašalinti <attribute/slot> &b- pašalinti kai kuriuos modifikatorius'
+    params: <add/remove> [...]
+    add:
+      params: add <attribute> <amount> [operation] [slot]
+      description:
+      - '&b&lPridėti atributo modifikatorių'
+      - ''
+      - '&e<attribute> &batributo tipas'
+      - '&e<amount> &bkiekis, kurį reikia nustatyti'
+      - '&e[operation] &bkaip modifikatorius pridedamas, pagal numatytuosius nustatymus sumuoja'
+      - '&e[slot] &btaikyti šį modifikatorių tik tada, kai daiktas yra pasirinktoje'
+      - '&e       įrangos vietoje arba bet kurioje įrangos vietoje, jei nepasirinkta'
+    remove:
+      params: remove <attribute/slot>
+      description:
+      - '&b&lPašalinti modifikatorius'
+      - ''
+      - '&e<attribute/slot> &btipas, kurį reikia pašalinti, bet kokie modifikatoriai su'
+      - '&b                 pasirinkta reikšme bus pašalinti'
+  tropicalfish:
+    wrong-type: '&4[&cItemEdit&4] &cDaiktas turi būti tropinių žuvų kibiras'
+    wrong-color: '&4[&cItemEdit&4] &cNeteisinga spalvos reikšmė! &4[&6hover here&4]'
+    wrong-pattern: '&4[&cItemEdit&4] &cNeteisinga modelio reikšmė! &4[&6hover here&4]'
+    description:
+    - '&b&lNustatyti tropinių žuvų kibiro savybes'
+    - ''
+    - '&emodelis <pattern type> &b- žuvies tipas'
+    - '&emodeliospalva <color> &b- žuvies modelio spalva'
+    - '&ekūnospalva <color> &b- žuvies kūno spalva'
+    params: '[...]'
+    pattern:
+      params: pattern <type>
+      description:
+      - '&b&lNustatyti tropinių žuvų modelio tipą'
+      - ''
+      - '&e<type> &bžuvies modelio tipas'
+    patterncolor:
+      params: patterncolor <color>
+      description:
+      - '&b&lNustatyti tropinių žuvų modelio spalvą'
+      - ''
+      - '&e<color> &bžuvies modelio spalva'
+    bodycolor:
+      params: bodycolor <color>
+      description:
+      - '&b&lNustatyti tropinių žuvų kūno spalvą'
+      - ''
+      - '&e<color> &bžuvies kūno spalva'
+  repaircost:
+    description:
+    - '&b&lRedaguoti priekalo taisymo kainą'
+    - ''
+    - '&e<cost> &blygių kiekis'
+    - '&b&lPastaba: &bpriekalo taisymo/pervadinimo kaina visada yra bent &e1'
+    - '&b&lPastaba: &bši komanda nustato pagrindinę daikto taisymo kainą, galutinė lygių kaina
+      priekale priklauso nuo to, ką darote'
+    - '&bDaugiau informacijos rasite &eminecraft.gamepedia.com/Anvil/Mechanics'
+    params: <cost>
+  custommodeldata:
+    description:
+    - '&b&lRedaguoti pasirinktinių modelių duomenis'
+    - ''
+    - '&bNaudojama tekstūrų paketams'
+    - '&e<value> &bteigiama int reikšmė tiksliniams duomenų modeliams'
+    params: <value>
+  axolotlvariant:
+    wrong-type: '&4[&cItemEdit&4] &cDaiktas turi būti aksolotlio kibiras'
+    wrong-axolotl: '&4[&cItemEdit&4] &cNeteisinga aksolotlio reikšmė! &4[&6hover here&4]'
+    description:
+    - '&b&lRedaguoti aksolotlio variantą aksolotlio kibire'
+    - ''
+    - '&e<type> &baksotlio tipas'
+    params: <type>
+  listaliases:
+    description:
+    - '&b&lRodyti leistinus alias parametrus'
+    - ''
+    - '&e<type> &bparametro tipas, kurį reikia rodyti'
+    params: <type>
+    prefix_line: '&1 ◆  ◆  ◆  ◆  &9Aliasai  &1◆  ◆  ◆  ◆'
+    postfix_line: '&1 ◆  ◆  ◆  ◆  &9Aliasai  &1◆  ◆  ◆  ◆'
+    first_color: '&b'
+    second_color: '&e'
+    hover_info: '&9Originali reikšmė: &e%default%'
+    hover_type: '&6Spustelėkite, kad patikrintumėte'
+    error-pre-hover: '&6&lAliasai:'
+  compass:
+    wrong-type: '&4[&cItemEdit&4] &cDaiktas turi būti kompasas'
+    description:
+    - '&b&lNustatyti kompaso tikslinę vietą'
+    - ''
+    - '&eNustatyti &b- nustatyti jūsų vietą kaip kompaso tikslą'
+    - '&eIšvalyti &b- išvalyti kompaso tikslą'
+    params: <set/clear>
+    set:
+      feedback: '&9[&fItemEdit&9] &aKompasas dabar rodo į &e%world% %x% %y% %z%'
+    clear:
+      feedback: '&9[&fItemEdit&9] &aKompaso tikslas išvalytas'
+  goathornsound:
+    wrong-type: '&4[&cItemEdit&4] &cDaiktas turi būti ožio ragas'
+    wrong-sound: '&4[&cItemEdit&4] &cNeteisinga garso reikšmė! &4[&6hover here&4]'
+    description:
+    - '&b&lNustatyti ožio rago garsą'
+    - ''
+    - '&e<type> &bgarso tipas'
+    params: <type>
+  armortrim:
+    wrong-type: '&4[&cItemEdit&4] &cDaiktas turi būti šarvai'
+    wrong-type: '&4[&cItemEdit&4] &cDaiktas turi būti šarvai'
+    wrong-material: '&4[&cItemEdit&4] &cNeteisinga apdailos medžiagos reikšmė! &4[&6hover here&4]'
+    wrong-pattern: '&4[&cItemEdit&4] &cNeteisinga apdailos rašto reikšmė! &4[&6hover here&4]'
+    description:
+    - '&b&lNustatyti šarvų apdailą'
+    - ''
+    - '&e<material> &bapdailos medžiaga'
+    - '&e<pattern> &bapdailos raštas'
+    params: <material> <pattern>
